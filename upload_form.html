@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload Example</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .file-info {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Upload a File</h2>
+    <div class="form-container">
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            
+            <div class="form-group">
+                <label for="fileUpload">Choose a file to upload (JPG, PNG, PDF only, max 5MB):</label>
+                <input type="file" name="fileUpload" id="fileUpload" accept=".jpg, .jpeg, .png, .pdf" required>
+                <p class="file-info">Allowed file types: JPG, PNG, PDF. Maximum file size: 5MB.</p>
+            </div>
+
+            <button type="submit" name="submit">Upload</button>
+
+            <!-- Here we could add error or success messages -->
+            <!-- Example error/success message would appear after form submission -->
+            <div id="message"></div>
+        </form>
+    </div>
+
+</body>
+</html>
